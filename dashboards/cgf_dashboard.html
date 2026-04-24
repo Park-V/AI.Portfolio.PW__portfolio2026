@@ -792,6 +792,184 @@
                     </div>
                   )}
 
+                  {selectedDeckSlides.includes('roi-scatter') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.purple500}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.purple500, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: ROI Priority Matrix</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral }}>
+                        <div style={{ fontSize: '0.78rem', color: COLORS.navy700, marginBottom: '1rem' }}>Strategic quadrant — Cost Efficiency vs. Reach identifies investment priorities</div>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                          {programs.map(p => (
+                            <div key={p.id} style={{ background: COLORS.white, padding: '0.75rem', borderRadius: '6px', border: `1px solid ${COLORS.navy100}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: COLORS.navy900 }}>{p.name}</span>
+                              <div style={{ textAlign: 'right' }}>
+                                <div style={{ fontSize: '0.65rem', color: COLORS.navy700 }}>Efficiency: <strong>{Math.round(p.scores.costEfficiency)}</strong></div>
+                                <div style={{ fontSize: '0.65rem', color: COLORS.navy700 }}>Reach: <strong>{Math.round(p.scores.reach)}</strong></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('top-opportunity') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.green700}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.green700, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: Education Expansion Case</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral }}>
+                        <div style={{ background: COLORS.white, padding: '1rem', borderRadius: '6px', borderLeft: `4px solid ${COLORS.green700}`, marginBottom: '0.75rem' }}>
+                          <div style={{ fontSize: '0.82rem', fontWeight: 700, color: COLORS.navy900, marginBottom: '0.75rem' }}>Investment Proposal: Expand to 645 Children (+30%)</div>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem' }}>
+                            {[{ l: 'Additional Funding', v: '+$49K' }, { l: 'Additional Children', v: '+149' }, { l: 'Cost per Child', v: '$327' }].map((m, i) => (
+                              <div key={i} style={{ textAlign: 'center', padding: '0.5rem', background: COLORS.neutral, borderRadius: '4px' }}>
+                                <div style={{ fontSize: '0.65rem', color: COLORS.navy700 }}>{m.l}</div>
+                                <div style={{ fontWeight: 700, color: COLORS.green700, fontSize: '1rem' }}>{m.v}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <p style={{ fontSize: '0.78rem', color: COLORS.navy700, lineHeight: '1.5', margin: 0 }}>Highest composite score with proven volunteer leverage model. Demand consistently exceeds capacity — 496 served vs. 450 target.</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('youth-redesign') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.orange500}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.orange500, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: Youth Transition Restructuring</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral }}>
+                        <div style={{ background: COLORS.white, padding: '1rem', borderRadius: '6px', borderLeft: `4px solid ${COLORS.orange500}` }}>
+                          <div style={{ fontSize: '0.82rem', fontWeight: 700, color: COLORS.navy900, marginBottom: '0.75rem' }}>Current State → Proposed Model</div>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', fontSize: '0.75rem' }}>
+                            <div style={{ padding: '0.75rem', background: '#fff8f0', borderRadius: '4px', border: `1px solid ${COLORS.orange500}` }}>
+                              <div style={{ fontWeight: 600, color: COLORS.red500, marginBottom: '0.5rem' }}>⚠ Current Issues</div>
+                              <ul style={{ margin: 0, paddingLeft: '1.1rem', color: COLORS.navy700, lineHeight: '1.6' }}>
+                                <li>$1,164/child — 5.6× portfolio avg</li>
+                                <li>Only 13 children served</li>
+                                <li>3.2-month funding runway</li>
+                              </ul>
+                            </div>
+                            <div style={{ padding: '0.75rem', background: '#f0fff4', borderRadius: '4px', border: `1px solid ${COLORS.green700}` }}>
+                              <div style={{ fontWeight: 600, color: COLORS.green700, marginBottom: '0.5rem' }}>✓ Proposed Changes</div>
+                              <ul style={{ margin: 0, paddingLeft: '1.1rem', color: COLORS.navy700, lineHeight: '1.6' }}>
+                                <li>Group delivery model</li>
+                                <li>Volunteer leverage (+12)</li>
+                                <li>Target: $400/child</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('trends') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.navy700}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.navy700, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: Key Trends Identified</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                        {[
+                          { icon: '📈', title: 'Volunteer Leverage', detail: 'GAL model: 1 advocate → 4.7 children served. Highest multiplier in portfolio.' },
+                          { icon: '📊', title: 'Demand Shifts', detail: 'Enrichment +10% YoY. Normalcy -51% (capacity constrained). Education at 100% capacity.' },
+                          { icon: '⭐', title: 'GAL Multiplier Effect', detail: '148 advocates supported → 700+ children benefited at $257/advocate cost.' }
+                        ].map((t, i) => (
+                          <div key={i} style={{ background: COLORS.white, padding: '0.75rem 1rem', borderRadius: '6px', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                            <span style={{ fontSize: '1.2rem' }}>{t.icon}</span>
+                            <div>
+                              <div style={{ fontWeight: 600, fontSize: '0.85rem', color: COLORS.navy900, marginBottom: '0.2rem' }}>{t.title}</div>
+                              <div style={{ fontSize: '0.75rem', color: COLORS.navy700 }}>{t.detail}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('risks') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.red500}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.red500, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: Critical Risks</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        {[
+                          { level: 'HIGH', color: COLORS.red500, risk: 'Funding Crisis', desc: 'Youth Transition: 3.2-month runway. Enrichment grant expiring Dec 2025 ($5K remaining).' },
+                          { level: 'MED', color: COLORS.orange500, risk: 'Capacity Constraints', desc: 'Normalcy at 83% capacity with 15% unfulfilled requests. Cannot scale without volunteer growth.' },
+                          { level: 'MED', color: COLORS.yellow500, risk: 'Outcome Data Gaps', desc: 'Normalcy and Awards lack standardized outcome measurement frameworks.' }
+                        ].map((r, i) => (
+                          <div key={i} style={{ background: COLORS.white, padding: '0.75rem 1rem', borderRadius: '6px', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', borderLeft: `4px solid ${r.color}` }}>
+                            <span style={{ fontSize: '0.65rem', fontWeight: 700, padding: '0.2rem 0.4rem', background: r.color, color: COLORS.white, borderRadius: '3px', whiteSpace: 'nowrap' }}>{r.level}</span>
+                            <div>
+                              <div style={{ fontWeight: 600, fontSize: '0.85rem', color: COLORS.navy900, marginBottom: '0.2rem' }}>{r.risk}</div>
+                              <div style={{ fontSize: '0.75rem', color: COLORS.navy700 }}>{r.desc}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('opportunities') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.green700}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.green700, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: Strategic Opportunities</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        {[
+                          { icon: '💻', title: 'Technology Investment', desc: 'Shared platform ($25K): projected 30–40% reduction in administrative overhead.' },
+                          { icon: '🤝', title: 'Partnerships', desc: '3 corporate partnerships targeted for Q2. Volunteer pipeline: +12 advocates.' },
+                          { icon: '🏦', title: 'Endowment', desc: 'Year 1 target: $150K. Reduces dependency on short-term grants. 200-donor monthly giving program.' }
+                        ].map((o, i) => (
+                          <div key={i} style={{ background: COLORS.white, padding: '0.75rem 1rem', borderRadius: '6px', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                            <span style={{ fontSize: '1.2rem' }}>{o.icon}</span>
+                            <div>
+                              <div style={{ fontWeight: 600, fontSize: '0.85rem', color: COLORS.navy900, marginBottom: '0.2rem' }}>{o.title}</div>
+                              <div style={{ fontSize: '0.75rem', color: COLORS.navy700 }}>{o.desc}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('recommendations') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.navy500}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.navy500, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: Phased Recommendations</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        {[
+                          { phase: 'Phase 1 (0–30 Days)', color: COLORS.red500, items: ['Emergency fundraising ($75K)', 'Grant sprint: 15 applications'] },
+                          { phase: 'Phase 2 (30–90 Days)', color: COLORS.orange500, items: ['Youth model redesign', 'Volunteer +12', 'Outcomes system'] },
+                          { phase: 'Phase 3 (3–6 Months)', color: COLORS.green700, items: ['Education → 645 children', 'Monthly giving launch', '3 corporate partnerships'] },
+                          { phase: 'Phase 4 (6–12 Months)', color: COLORS.navy500, items: ['Endowment Year 1 ($150K)', 'FY27–29 planning'] }
+                        ].map((p, i) => (
+                          <div key={i} style={{ background: COLORS.white, padding: '0.6rem 0.85rem', borderRadius: '6px', borderLeft: `4px solid ${p.color}`, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                            <div style={{ fontSize: '0.7rem', fontWeight: 700, color: p.color, whiteSpace: 'nowrap', minWidth: '130px' }}>{p.phase}</div>
+                            <div style={{ fontSize: '0.72rem', color: COLORS.navy700 }}>{p.items.join(' · ')}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDeckSlides.includes('timeline') && (
+                    <div style={{ background: COLORS.white, border: `2px solid ${COLORS.navy900}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', marginBottom: '1.5rem' }}>
+                      <div style={{ background: COLORS.navy900, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide: FY26 Timeline</div>
+                      <div style={{ padding: '1.5rem', background: COLORS.neutral }}>
+                        <div style={{ display: 'flex', gap: '0.5rem', position: 'relative' }}>
+                          <div style={{ position: 'absolute', top: '0.7rem', left: '5%', right: '5%', height: '2px', background: COLORS.navy100, zIndex: 0 }} />
+                          {[
+                            { q: 'Q1', month: 'Jan–Mar', color: COLORS.red500, tasks: ['Emergency fundraising', 'Grant sprint'] },
+                            { q: 'Q2', month: 'Apr–Jun', color: COLORS.orange500, tasks: ['Youth redesign', 'Volunteer +12'] },
+                            { q: 'Q3', month: 'Jul–Sep', color: COLORS.green700, tasks: ['Education expand', 'Monthly giving'] },
+                            { q: 'Q4', month: 'Oct–Dec', color: COLORS.navy500, tasks: ['Endowment launch', 'FY27 planning'] }
+                          ].map((q, i) => (
+                            <div key={i} style={{ flex: 1, textAlign: 'center', position: 'relative', zIndex: 1 }}>
+                              <div style={{ width: '1.4rem', height: '1.4rem', borderRadius: '50%', background: q.color, margin: '0 auto 0.4rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <span style={{ fontSize: '0.55rem', color: COLORS.white, fontWeight: 700 }}>{q.q}</span>
+                              </div>
+                              <div style={{ fontSize: '0.62rem', color: COLORS.navy700, marginBottom: '0.35rem' }}>{q.month}</div>
+                              {q.tasks.map((t, j) => (
+                                <div key={j} style={{ fontSize: '0.62rem', padding: '0.15rem 0.25rem', background: COLORS.white, borderRadius: '3px', marginBottom: '0.15rem', color: COLORS.navy900 }}>{t}</div>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Call to Action - always last */}
                   <div style={{ background: COLORS.white, border: `3px solid ${COLORS.orange500}`, borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
                     <div style={{ background: COLORS.orange500, color: COLORS.white, padding: '0.75rem 1rem', fontWeight: 600 }}>Slide {totalSlides}: Call to Action</div>
@@ -901,8 +1079,8 @@
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
             <button onClick={() => setView('dashboard')} style={{ padding: '0.75rem 1.5rem', background: COLORS.white, color: COLORS.navy500, border: `2px solid ${COLORS.navy500}`, borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}>Cancel</button>
-            <button onClick={() => setShowReportPreview(true)} disabled={selectedComponents.length === 0}
-              style={{ padding: '0.75rem 2rem', background: selectedComponents.length > 0 ? COLORS.navy500 : COLORS.navy100, color: COLORS.white, border: 'none', borderRadius: '6px', fontWeight: 600, cursor: selectedComponents.length > 0 ? 'pointer' : 'not-allowed', display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'inherit' }}>
+            <button onClick={() => setShowReportPreview(true)}
+              style={{ padding: '0.75rem 2rem', background: COLORS.navy500, color: COLORS.white, border: 'none', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'inherit' }}>
               <Eye size={18} /> Preview Report
             </button>
           </div>
@@ -947,6 +1125,109 @@
                       ))}
                     </div>
                   </div>
+
+                  {selectedComponents.includes('matrix') && (
+                    <div style={{ background: COLORS.white, border: `3px solid ${COLORS.green700}`, borderRadius: '8px', padding: '2rem', marginBottom: '2rem' }}>
+                      <h2 style={{ color: COLORS.navy900, margin: '0 0 1.5rem 0', fontSize: '1.5rem', fontWeight: 600, borderBottom: `2px solid ${COLORS.navy100}`, paddingBottom: '0.75rem' }}>Performance Matrix</h2>
+                      <div style={{ overflowX: 'auto' }}>
+                        <table style={{ width: '100%', fontSize: '0.8rem', borderCollapse: 'collapse' }}>
+                          <thead>
+                            <tr style={{ background: COLORS.navy500, color: COLORS.white }}>
+                              <th style={{ padding: '0.6rem', textAlign: 'left' }}>Program</th>
+                              {['Cost', 'Reach', 'Demand', 'Outcome', 'Growth', 'Stability', 'Score'].map(d => <th key={d} style={{ padding: '0.6rem', textAlign: 'center' }}>{d}</th>)}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {programs.map((p, idx) => (
+                              <tr key={p.id} style={{ background: idx % 2 === 0 ? COLORS.white : COLORS.navy50 }}>
+                                <td style={{ padding: '0.6rem', fontWeight: 600 }}>{p.name}</td>
+                                {['costEfficiency','reach','demand','outcome','growth','stability'].map(k => {
+                                  const sc = Math.round(p.scores[k]);
+                                  return <td key={k} style={{ padding: '0.6rem', textAlign: 'center' }}><span style={{ padding: '0.2rem 0.4rem', background: getScoreColor(sc), color: COLORS.white, borderRadius: '3px', fontWeight: 700, fontSize: '0.72rem' }}>{sc}</span></td>;
+                                })}
+                                <td style={{ padding: '0.6rem', textAlign: 'center' }}><span style={{ padding: '0.3rem 0.5rem', background: getScoreColor(p.scores.composite), color: COLORS.white, borderRadius: '4px', fontWeight: 700, fontSize: '0.82rem' }}>{p.scores.composite}</span></td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedComponents.includes('roi') && (
+                    <div style={{ background: COLORS.white, border: `3px solid ${COLORS.purple500}`, borderRadius: '8px', padding: '2rem', marginBottom: '2rem' }}>
+                      <h2 style={{ color: COLORS.navy900, margin: '0 0 1.5rem 0', fontSize: '1.5rem', fontWeight: 600, borderBottom: `2px solid ${COLORS.navy100}`, paddingBottom: '0.75rem' }}>ROI Priority Matrix</h2>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.75rem' }}>
+                        {programs.map(p => (
+                          <div key={p.id} style={{ background: COLORS.neutral, padding: '1rem', borderRadius: '6px', borderLeft: `4px solid ${getScoreColor(p.scores.composite)}` }}>
+                            <div style={{ fontWeight: 600, fontSize: '0.9rem', color: COLORS.navy900, marginBottom: '0.5rem' }}>{p.name}</div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: COLORS.navy700 }}>
+                              <span>Efficiency: <strong>{Math.round(p.scores.costEfficiency)}</strong></span>
+                              <span>Reach: <strong>{Math.round(p.scores.reach)}</strong></span>
+                            </div>
+                            <div style={{ fontSize: '0.75rem', color: COLORS.navy700, marginTop: '0.25rem' }}>
+                              Cost/child: <strong>${p.fy25.costPerChild.toLocaleString()}</strong>
+                            </div>
+                            <div style={{ marginTop: '0.5rem', fontSize: '0.75rem' }}>
+                              Composite: <span style={{ padding: '0.15rem 0.4rem', background: getScoreColor(p.scores.composite), color: COLORS.white, borderRadius: '3px', fontWeight: 700 }}>{p.scores.composite}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedComponents.includes('insights') && (
+                    <div style={{ background: COLORS.white, border: `3px solid ${COLORS.navy700}`, borderRadius: '8px', padding: '2rem', marginBottom: '2rem' }}>
+                      <h2 style={{ color: COLORS.navy900, margin: '0 0 1.5rem 0', fontSize: '1.5rem', fontWeight: 600, borderBottom: `2px solid ${COLORS.navy100}`, paddingBottom: '0.75rem' }}>Deep Strategic Insights</h2>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {insights.map(insight => (
+                          <div key={insight.id} style={{ background: COLORS.neutral, padding: '1.5rem', borderRadius: '8px', borderLeft: `5px solid ${insight.color}` }}>
+                            <h3 style={{ color: COLORS.navy900, margin: '0 0 0.75rem 0', fontSize: '1.05rem' }}>{insight.title}</h3>
+                            <p style={{ fontSize: '0.85rem', color: COLORS.navy700, lineHeight: '1.65', margin: '0 0 1rem 0' }}>{insight.narrative}</p>
+                            <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.82rem', color: COLORS.navy700, lineHeight: '1.8' }}>
+                              {insight.recommendations.map((r, i) => <li key={i}>{r}</li>)}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedComponents.includes('trends') && (
+                    <div style={{ background: COLORS.white, border: `3px solid ${COLORS.navy100}`, borderRadius: '8px', padding: '2rem', marginBottom: '2rem' }}>
+                      <h2 style={{ color: COLORS.navy900, margin: '0 0 1.5rem 0', fontSize: '1.5rem', fontWeight: 600, borderBottom: `2px solid ${COLORS.navy100}`, paddingBottom: '0.75rem' }}>Longitudinal Trends: FY24 → FY25</h2>
+                      <div style={{ overflowX: 'auto' }}>
+                        <table style={{ width: '100%', fontSize: '0.85rem', borderCollapse: 'collapse' }}>
+                          <thead>
+                            <tr style={{ background: COLORS.navy500, color: COLORS.white }}>
+                              <th style={{ padding: '0.75rem', textAlign: 'left' }}>Program</th>
+                              <th style={{ padding: '0.75rem', textAlign: 'right' }}>FY24 Children</th>
+                              <th style={{ padding: '0.75rem', textAlign: 'right' }}>FY25 Children</th>
+                              <th style={{ padding: '0.75rem', textAlign: 'right' }}>Growth</th>
+                              <th style={{ padding: '0.75rem', textAlign: 'right' }}>FY24 $/Child</th>
+                              <th style={{ padding: '0.75rem', textAlign: 'right' }}>FY25 $/Child</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {programs.map((p, idx) => {
+                              const growth = Math.round(((p.fy25.childrenServed - p.fy24.childrenServed) / p.fy24.childrenServed) * 100);
+                              return (
+                                <tr key={p.id} style={{ background: idx % 2 === 0 ? COLORS.white : COLORS.navy50 }}>
+                                  <td style={{ padding: '0.75rem', fontWeight: 600 }}>{p.name}</td>
+                                  <td style={{ padding: '0.75rem', textAlign: 'right' }}>{p.fy24.childrenServed}</td>
+                                  <td style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600 }}>{p.fy25.childrenServed}</td>
+                                  <td style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: growth >= 0 ? COLORS.green700 : COLORS.red500 }}>{growth >= 0 ? '+' : ''}{growth}%</td>
+                                  <td style={{ padding: '0.75rem', textAlign: 'right' }}>${p.fy24.costPerChild}</td>
+                                  <td style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: p.fy25.costPerChild > p.fy24.costPerChild ? COLORS.red500 : COLORS.green700 }}>${p.fy25.costPerChild}</td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
 
                   {selectedComponents.includes('grants') && (
                     <div style={{ background: COLORS.white, border: `3px solid ${COLORS.red500}`, borderRadius: '8px', padding: '2rem', marginBottom: '2rem' }}>

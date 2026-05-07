@@ -1485,11 +1485,22 @@ document.querySelectorAll('.dash-iframe').forEach(function(iframe) {
       s.id = '__scroll-contain';
       s.textContent = 'html,body{overscroll-behavior:contain;}';
       doc.head.appendChild(s);
-      // Intercept wheel events at scroll boundaries so the browser never
-      // chains the scroll to the parent page.
+      // Intercept wheel events at the iframe document scroll boundaries so
+      // the browser never chains scroll to the parent page. Walk up from
+      // the wheel target first — if it's inside an inner scrollable element
+      // (e.g. a modal preview's content area), let the browser handle it
+      // natively so inner scroll still works.
       var scr = doc.createElement('script');
       scr.textContent = '(function(){' +
         'window.addEventListener("wheel",function(e){' +
+          'var t=e.target;' +
+          'while(t&&t!==document.documentElement&&t!==document.body){' +
+            'if(t.scrollHeight>t.clientHeight){' +
+              'var oy=getComputedStyle(t).overflowY;' +
+              'if(oy==="auto"||oy==="scroll"){return;}' +
+            '}' +
+            't=t.parentElement;' +
+          '}' +
           'var el=document.scrollingElement||document.documentElement;' +
           'var atBottom=el.scrollTop+el.clientHeight>=el.scrollHeight-2;' +
           'var atTop=el.scrollTop<=0;' +

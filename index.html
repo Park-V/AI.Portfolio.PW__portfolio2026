@@ -1473,8 +1473,10 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
-// Contain scroll inside dashboard frames — prevents the page from scrolling
-// when the user wheels inside an iframe at its top or bottom boundary.
+// Contain scroll inside dashboard frames — `overscroll-behavior: contain` on
+// the iframe's html/body tells the browser not to chain scroll to the parent
+// page when the iframe reaches a scroll boundary. Native iframe scrolling
+// (and any inner scrollable, like a modal's content area) works untouched.
 document.querySelectorAll('.dash-iframe').forEach(function(iframe) {
   function injectContain() {
     try {
@@ -1485,29 +1487,6 @@ document.querySelectorAll('.dash-iframe').forEach(function(iframe) {
       s.id = '__scroll-contain';
       s.textContent = 'html,body{overscroll-behavior:contain;}';
       doc.head.appendChild(s);
-      // Intercept wheel events at the iframe document scroll boundaries so
-      // the browser never chains scroll to the parent page. Walk up from
-      // the wheel target first — if it's inside an inner scrollable element
-      // (e.g. a modal preview's content area), let the browser handle it
-      // natively so inner scroll still works.
-      var scr = doc.createElement('script');
-      scr.textContent = '(function(){' +
-        'window.addEventListener("wheel",function(e){' +
-          'var t=e.target;' +
-          'while(t&&t!==document.documentElement&&t!==document.body){' +
-            'if(t.scrollHeight>t.clientHeight){' +
-              'var oy=getComputedStyle(t).overflowY;' +
-              'if(oy==="auto"||oy==="scroll"){return;}' +
-            '}' +
-            't=t.parentElement;' +
-          '}' +
-          'var el=document.scrollingElement||document.documentElement;' +
-          'var atBottom=el.scrollTop+el.clientHeight>=el.scrollHeight-2;' +
-          'var atTop=el.scrollTop<=0;' +
-          'if((e.deltaY>0&&atBottom)||(e.deltaY<0&&atTop)){e.preventDefault();}' +
-        '},{passive:false});' +
-      '})();';
-      doc.head.appendChild(scr);
     } catch(e) {}
   }
   iframe.addEventListener('load', injectContain);
